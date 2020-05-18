@@ -1,0 +1,15 @@
+<input
+    class="form-control hijriInput"
+    [(ngModel)]="selectedDate"
+    placeholder="d/M/yyyy"
+    ngbDatepicker
+    (click)="d.toggle()"
+    (dateSelect)="changeDate()"
+    #d="ngbDatepicker"
+    [readonly]="readonly"
+    [minDate]="min"
+    [maxDate]="max"
+    [required]="isRequired"
+    [name]="name"
+    (blur)="onBlur()"
+    [disabled]="disabled" />
