@@ -341,7 +341,7 @@
       </g>
     </svg>
 
-    <span>{{ title }} app is running!</span>
+    <span>Hijri Gregorian Datepicker</span>
 
     <svg id="rocket-smoke" alt="Rocket Ship Smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632" viewBox="0 0 516.119 1083.632">
       <path id="Path_40" data-name="Path 40" d="M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z" transform="translate(-147.025 -140.939)" fill="#f5f5f5"/>
@@ -349,16 +349,24 @@
 
   </div>
 
-  <!-- Resources -->
-  <h2>Hijri Gregorian Datepicker</h2>
+<br />
+<br />
+<br />
 
-  <div class="card-container">
+  <div class="row">
 
-     <hijri-gregorian-datepicker [label]="'Date'" [(selectedDate)]="date"  [isRequired]="true" #datePicker> </hijri-gregorian-datepicker>
+    <div class="col-12">
+      <hijri-gregorian-datepicker [label]="'Date'" [(selectedDate)]="date"  [isRequired]="true" #datePicker> </hijri-gregorian-datepicker>
 
+      <button type="button" class="btn btn-sm btn-info" (click)="getDate()">Get Date</button>
+
+      <span class="font-weight-bold"> {{dateString}} </span>
+    </div>
 
   </div>
 
+  <hr/>
+  <pre>Model: {{ date | json }}</pre>
 
   <!-- Footer -->
 

@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HijriGregorianDatepickerComponent } from './hijri-gregorian-datepicker/hijri-gregorian-datepicker.component';
 import { HijriDatepickerComponent } from './hijri-gregorian-datepicker/hijri-datepicker/hijri-datepicker.component';
+import { FormsModule } from '@angular/forms';
+import { NgbModule, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { CustomNgbDateParserFormatter } from './hijri-gregorian-datepicker/CustomNgbDateParserFormatter';
 
 @NgModule({
   declarations: [
@@ -14,9 +17,17 @@ import { HijriDatepickerComponent } from './hijri-gregorian-datepicker/hijri-dat
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: NgbDateParserFormatter, useFactory() {
+        return new CustomNgbDateParserFormatter('d/M/yyyy');
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

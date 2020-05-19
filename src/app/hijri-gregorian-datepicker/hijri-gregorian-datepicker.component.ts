@@ -1,19 +1,18 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
-
-import * as moment from 'moment';
-
-import * as moment_ from 'moment-hijri';
 import { DateType } from './consts';
 import { NgForm, ControlContainer } from '@angular/forms';
 import { DateFormatterService } from './date-formatter.service';
+
+import * as moment from 'moment';
+import * as moment_ from 'moment-hijri';
 const momentHijri = moment_;
 
 
 @Component({
   selector: 'hijri-gregorian-datepicker',
   templateUrl: './hijri-gregorian-datepicker.component.html',
-  viewProviders: [ { provide: ControlContainer, useExisting: NgForm } ]
+  //viewProviders: [ { provide: ControlContainer, useExisting: NgForm } ]
 })
 export class HijriGregorianDatepickerComponent implements OnInit {
 
@@ -64,6 +63,7 @@ export class HijriGregorianDatepickerComponent implements OnInit {
     this.selectedDateType = DateType.Hijri;
     //to hijri
     this.selectedDate = this.dateFormatterService.ToHijri(this.selectedDate);
+    this.selectedDateChange.emit(this.selectedDate);
   }
   gregClick() {
     if (this.selectedDateType == DateType.Gregorian) {
@@ -72,5 +72,6 @@ export class HijriGregorianDatepickerComponent implements OnInit {
     this.selectedDateType = DateType.Gregorian;
     //to Gregorian
     this.selectedDate = this.dateFormatterService.ToGregorian(this.selectedDate);
+    this.selectedDateChange.emit(this.selectedDate);
   }
 }

@@ -14,7 +14,7 @@ import { ControlContainer, NgForm } from '@angular/forms';
     './hijri-date-picker.component.css'
   ],
   encapsulation: ViewEncapsulation.None,
-  viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
+ // viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
 })
 export class HijriDatepickerComponent {
 

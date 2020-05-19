@@ -29,6 +29,18 @@ export class DateFormatterService {
         return ngDate;
     }
 
+    ToBindableHijroDateUsingFormat(hijriDate: string, format: string): NgbDate  {
+
+      let hijriMomentDate =  momentHijri(hijriDate , format); // Parse a Hijri date based on format.
+
+      let day = hijriMomentDate.iDate();
+      let month = +hijriMomentDate.iMonth() + 1 ;
+      let year = hijriMomentDate.iYear();
+
+      let ngDate =  new NgbDate(+year, month, +day);
+      return ngDate;
+   }
+
     ToHijri(date: NgbDateStruct): NgbDateStruct {
         if (!date) {
             return null;
@@ -61,4 +73,5 @@ export class DateFormatterService {
         let ngDate =  new NgbDate(+year, +month, +day);
         return ngDate;
     }
+
 }
