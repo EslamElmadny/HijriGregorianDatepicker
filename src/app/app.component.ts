@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
-import { HijriGregorianDatepickerComponent } from './hijri-gregorian-datepicker/hijri-gregorian-datepicker.component';
-import { DateFormatterService } from './hijri-gregorian-datepicker/date-formatter.service';
+import { DateFormatterService } from 'ngx-hijri-gregorian-datepicker';
 
 import * as moment_ from 'moment-hijri';
 const momentHijri = moment_;
@@ -18,7 +17,7 @@ export class AppComponent {
   date: NgbDate;
   dateString: string;
 
-  @ViewChild('datePicker', {static : true}) startDatePicker: HijriGregorianDatepickerComponent;
+  @ViewChild('datePicker', {static : true}) startDatePicker: any;
 
   constructor(private dateFormatterService: DateFormatterService) {
 

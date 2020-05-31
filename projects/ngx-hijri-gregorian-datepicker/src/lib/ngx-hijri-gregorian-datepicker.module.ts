@@ -1,12 +1,32 @@
 import { NgModule } from '@angular/core';
 import { NgxHijriGregorianDatepickerComponent } from './ngx-hijri-gregorian-datepicker.component';
+import { HijriGregorianDatepickerComponent } from './hijri-gregorian-datepicker/hijri-gregorian-datepicker.component';
+import { HijriDatepickerComponent } from './hijri-gregorian-datepicker/hijri-datepicker/hijri-datepicker.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { NgbModule, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { CustomNgbDateParserFormatter } from './hijri-gregorian-datepicker/CustomNgbDateParserFormatter';
+import { DateFormatterService } from './hijri-gregorian-datepicker/date-formatter.service';
 
 
 
 @NgModule({
-  declarations: [NgxHijriGregorianDatepickerComponent],
+  declarations: [NgxHijriGregorianDatepickerComponent,
+    HijriGregorianDatepickerComponent,
+    HijriDatepickerComponent],
   imports: [
+    BrowserModule,
+    FormsModule,
+    NgbModule
   ],
-  exports: [NgxHijriGregorianDatepickerComponent]
+  providers: [
+    DateFormatterService,
+    {
+      provide: NgbDateParserFormatter, useFactory() {
+        return new CustomNgbDateParserFormatter('d/M/yyyy');
+      }
+    }
+  ],
+  exports: [ HijriGregorianDatepickerComponent, NgxHijriGregorianDatepickerComponent]
 })
 export class NgxHijriGregorianDatepickerModule { }

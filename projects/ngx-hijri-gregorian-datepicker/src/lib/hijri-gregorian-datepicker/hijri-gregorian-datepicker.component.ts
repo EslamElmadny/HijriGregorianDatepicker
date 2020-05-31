@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import { DateType } from './consts';
-import { NgForm, ControlContainer } from '@angular/forms';
 import { DateFormatterService } from './date-formatter.service';
 
 import * as moment from 'moment';
