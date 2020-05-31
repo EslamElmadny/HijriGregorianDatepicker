@@ -120,6 +120,46 @@
           }
         }
       }
+    },
+    "ngx-hijri-gregorian-datepicker": {
+      "projectType": "library",
+      "root": "projects/ngx-hijri-gregorian-datepicker",
+      "sourceRoot": "projects/ngx-hijri-gregorian-datepicker/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-hijri-gregorian-datepicker/tsconfig.lib.json",
+            "project": "projects/ngx-hijri-gregorian-datepicker/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-hijri-gregorian-datepicker/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-hijri-gregorian-datepicker/src/test.ts",
+            "tsConfig": "projects/ngx-hijri-gregorian-datepicker/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-hijri-gregorian-datepicker/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-hijri-gregorian-datepicker/tsconfig.lib.json",
+              "projects/ngx-hijri-gregorian-datepicker/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "hijri-gregorian-datepicker",

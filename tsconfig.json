@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-hijri-gregorian-datepicker": [
+        "dist/ngx-hijri-gregorian-datepicker/ngx-hijri-gregorian-datepicker",
+        "dist/ngx-hijri-gregorian-datepicker"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
