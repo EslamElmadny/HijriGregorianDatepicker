@@ -143,6 +143,11 @@
           "options": {
             "tsConfig": "projects/ngx-hijri-gregorian-datepicker/tsconfig.lib.json",
             "project": "projects/ngx-hijri-gregorian-datepicker/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-hijri-gregorian-datepicker/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
