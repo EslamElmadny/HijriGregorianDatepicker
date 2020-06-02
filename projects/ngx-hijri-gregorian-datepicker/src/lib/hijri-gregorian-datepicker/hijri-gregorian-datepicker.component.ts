@@ -18,7 +18,7 @@ const momentHijri = moment_;
 })
 export class HijriGregorianDatepickerComponent implements OnInit {
 
-  selectedDateType = DateType.Hijri;
+  @Input() selectedDateType: DateType;
   @Input() selectedDate: NgbDateStruct;
   @Output() selectedDateChange: EventEmitter<NgbDateStruct> = new EventEmitter();
 
@@ -43,6 +43,9 @@ export class HijriGregorianDatepickerComponent implements OnInit {
   constructor( private dateFormatterService: DateFormatterService) { }
 
   ngOnInit() {
+    if (!this.selectedDateType) {
+      this.selectedDateType = DateType.Hijri;
+    }
   }
 
   getSelectedDate(): string {

@@ -20,13 +20,12 @@ import { CustomNgbDateParserFormatter } from './hijri-gregorian-datepicker/Custo
     NgbModule
   ],
   providers: [
-    DateFormatterService
-    ,
     {
       provide: NgbDateParserFormatter, useFactory() {
         return new CustomNgbDateParserFormatter('d/M/yyyy');
       }
-    }
+    },
+    DateFormatterService
   ],
   exports: [ HijriGregorianDatepickerComponent, NgxHijriGregorianDatepickerComponent]
 })
