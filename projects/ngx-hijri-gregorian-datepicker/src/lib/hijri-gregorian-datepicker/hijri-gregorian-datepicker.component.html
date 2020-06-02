@@ -1,0 +1,40 @@
+
+    <div class="form-group">
+      <label class="requiredInput" for="input-birth-Date">{{ label }} </label>
+
+      <div class="input-group">
+
+          <input  class="form-control"
+                  placeholder="d/M/yyyy"
+                  [name]="label"
+                  *ngIf="selectedDateType == DateType.Gregorian"
+                  [(ngModel)]="selectedDate"
+                  ngbDatepicker (click)="d.toggle()"
+                  (dateSelect)="dateSelected()"
+                  autocomplete="off"
+                  #d="ngbDatepicker"
+                  [readonly]="readonly"
+                  [minDate]="minGreg"
+                  [maxDate]="maxGreg"
+                  [required]="isRequired"
+                  [disabled]="disabled">
+
+
+          <hijri-date-picker *ngIf="selectedDateType == DateType.Hijri"
+                             [(selectedDate)]="selectedDate"
+                             (selectedDateChange)="dateSelected()"
+                             [readonly]="readonly"
+                             [min]="minHijri" [max]="maxHijri"
+                             style="flex: 1 1 auto;"
+                             [name]="label"
+                             [isRequired]="isRequired"
+                             [disabled]="disabled">
+          </hijri-date-picker>
+
+          <div class="input-group-append">
+                  <button class="btn btn-sm {{selectedDateType == DateType.Hijri ? 'btn-info focus active' :  'btn-outline-info'}}" (click)="hijriClick()"  [disabled]="disabled" type="button"> Hijri</button>
+                  <button class="btn btn-sm {{selectedDateType == DateType.Gregorian ? 'btn-info focus active' :  'btn-outline-info'}}" (click)="gregClick()" [disabled]="disabled" type="button">Gregorian</button>
+           </div>
+
+      </div>
+  </div>
