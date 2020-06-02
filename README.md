@@ -1,5 +1,5 @@
 
-# HijriGregorianDatepicker
+# Hijri Gregorian Datepicker
 
 * This an angular date picker based on [ng-bootstrap](https://ng-bootstrap.github.io/#/components/datepicker/overview) that supports **Gregorian** and **Hijri** calendars. 
 * Provides ability to swap between **Gregorian** and **Hijri** calendars 
