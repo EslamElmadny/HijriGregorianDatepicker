@@ -32,6 +32,10 @@ export class HijriGregorianDatepickerComponent implements OnInit {
   @Input() minGreg: NgbDateStruct;
   @Input() maxGreg: NgbDateStruct;
 
+  @Input() hijriLabel: string;
+  @Input() GregLabel: string;
+
+
   get DateType() {
     return DateType;
   }
