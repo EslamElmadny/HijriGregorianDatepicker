@@ -1,7 +1,7 @@
 
 # Hijri Gregorian Datepicker
 
-* This is an angular date picker based on [ng-bootstrap](https://ng-bootstrap.github.io/#/components/datepicker/overview) that supports **Gregorian** and **Hijri** calendars. 
+* Angular datepicker based on [ng-bootstrap](https://ng-bootstrap.github.io/#/components/datepicker/overview) that supports **Gregorian** and **Hijri** calendars. 
 * Provides ability to swap between **Gregorian** and **Hijri** calendars 
 * Converting selected date back and forth when changing calendar type.
 * Provides service `DateFormatterService` to help converting date formats in both calendars types.
@@ -16,11 +16,11 @@ A simple Example can be found under `src/app/app.component` directory of this re
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Features
-* Simple UI to switch between  **Gregorian** and **Hijri** calendars.
+* Easy to switch between  **Gregorian** and **Hijri** calendars.
 * Ability to specify the default calendar type either **Gregorian** or **Hijri**.
 * Converting dates when changing type of calendar.
 * Ability to specify min and max value for **Gregorian** and **Hijri**.
-* Ability to make it required or readonly.
+* Ability to make it required , readonly or disabled.
 
 
 
@@ -31,7 +31,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## API
 >import  {  NgxHijriGregorianDatepickerModule  }  from  'ngx-hijri-gregorian-datepicker';
 
- ### @Inputs()
+## @Inputs()
  
 | Input|  Type| Required| Description |
 |--|--|--| -- |
@@ -49,7 +49,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 |GregLabel|string|No| Label for Gregorian button , will be 'Gregorian' By Default. |
 
 
-### @Outputs()
+## @Outputs()
 
 | Output|  Type| Required| Description |
 |--|--|--| -- |
