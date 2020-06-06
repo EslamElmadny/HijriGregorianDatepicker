@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
 import { NgbCalendar, NgbCalendarIslamicUmalqura, NgbDatepickerI18n, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { IslamicI18n } from '../IslamicI18n';
+import { ControlContainer, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'hijri-date-picker',
@@ -12,8 +13,7 @@ import { IslamicI18n } from '../IslamicI18n';
   styleUrls: [
     './hijri-date-picker.component.css'
   ],
-  encapsulation: ViewEncapsulation.None,
- // viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
+  encapsulation: ViewEncapsulation.None
 })
 export class HijriDatepickerComponent {
 

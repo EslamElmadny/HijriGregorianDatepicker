@@ -8,13 +8,13 @@ const moment = momentjs;
 
 
 import * as moment_ from 'moment-hijri';
+import { NgForm, ControlContainer } from '@angular/forms';
 const momentHijri = moment_;
 
 
 @Component({
   selector: 'hijri-gregorian-datepicker',
-  templateUrl: './hijri-gregorian-datepicker.component.html',
-  //viewProviders: [ { provide: ControlContainer, useExisting: NgForm } ]
+  templateUrl: './hijri-gregorian-datepicker.component.html'
 })
 export class HijriGregorianDatepickerComponent implements OnInit {
 

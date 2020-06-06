@@ -29,7 +29,7 @@ export class AppComponent {
     }
 
   getDate() {
-      this.dateString = this.startDatePicker.getSelectedDate();
+    this.dateString = this.startDatePicker.getSelectedDate();
   }
 
 }
