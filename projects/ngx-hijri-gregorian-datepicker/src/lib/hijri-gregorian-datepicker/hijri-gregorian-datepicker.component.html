@@ -12,13 +12,19 @@
                   ngbDatepicker (click)="d.toggle()"
                   (dateSelect)="dateSelected()"
                   autocomplete="off"
-                  #d="ngbDatepicker"
                   [readonly]="readonly"
                   [minDate]="minGreg"
                   [maxDate]="maxGreg"
                   [required]="isRequired"
-                  [disabled]="disabled">
+                  [disabled]="disabled"
+                  [footerTemplate]="footerTemplate"
+                  #d="ngbDatepicker">
 
+          <ng-template #footerTemplate>
+            <hr class="my-0">
+            <button class="btn btn-primary btn-sm m-2 float-left" (click)="selectedDate = undefined">Clear</button>
+            <button class="btn btn-secondary btn-sm m-2 float-right" (click)="close()">Close</button>
+          </ng-template>
 
           <hijri-date-picker *ngIf="selectedDateType == DateType.Hijri"
                              [(selectedDate)]="selectedDate"

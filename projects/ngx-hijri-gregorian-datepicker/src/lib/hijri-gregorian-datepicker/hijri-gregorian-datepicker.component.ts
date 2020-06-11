@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import {NgbDateStruct, NgbDatepicker} from '@ng-bootstrap/ng-bootstrap';
 import { DateType } from './consts';
 import { DateFormatterService } from './date-formatter.service';
 
@@ -17,6 +17,9 @@ const momentHijri = moment_;
   templateUrl: './hijri-gregorian-datepicker.component.html'
 })
 export class HijriGregorianDatepickerComponent implements OnInit {
+
+  @ViewChild('d') datePicker: any;
+
 
   @Input() selectedDateType: DateType;
   @Input() selectedDate: NgbDateStruct;
@@ -52,6 +55,9 @@ export class HijriGregorianDatepickerComponent implements OnInit {
     }
   }
 
+  close() {
+    this.datePicker.close();
+  }
   getSelectedDate(): string {
 
     let formattedDate = this.dateFormatterService.ToString(this.selectedDate);
