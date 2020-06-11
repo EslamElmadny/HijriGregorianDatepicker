@@ -19,6 +19,10 @@ export class AppComponent {
   date: NgbDateStruct;
   dateString: string;
   selectedDateType = DateType.Gregorian;
+
+  isDisabled: boolean;
+  isReadOnly: boolean;
+
   @ViewChild('datePicker') startDatePicker: any;
 
 
@@ -26,10 +30,37 @@ export class AppComponent {
 
      this.date = this.dateFormatterService.GetTodayGregorian();
 
+  }
+
+  makeReadonly() {
+    if (this.isReadOnly) {
+      this.isReadOnly = false;
+    } else {
+      this.isReadOnly = true;
     }
+  }
+
+  makeDisabled() {
+    if (this.isDisabled) {
+      this.isDisabled = false;
+    } else {
+      this.isDisabled = true;
+    }
+  }
 
   getDate() {
     this.dateString = this.startDatePicker.getSelectedDate();
   }
+
+  setCurrentGreg() {
+    this.selectedDateType = DateType.Gregorian;
+    this.date = this.dateFormatterService.GetTodayGregorian();
+  }
+
+  setHijri() {
+    this.selectedDateType = DateType.Hijri;
+    this.date = this.dateFormatterService.GetTodayHijri();
+  }
+
 
 }

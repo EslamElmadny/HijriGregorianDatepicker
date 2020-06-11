@@ -12,17 +12,25 @@
 
   <div class="col-5 offset-md-4 ">
 
-    <hijri-gregorian-datepicker
-     [label]="'Date'"
-     [(selectedDate)]="date"
-     [isRequired]="true"
-     [GregLabel]="'ميلادي'"
-     [hijriLabel] ="'هجري'"
-     [selectedDateType]="selectedDateType"
-     #datePicker>
+    <hijri-gregorian-datepicker [placeHolder]="'سنة/شهر/يوم'"
+                                [label]="'Date'"
+                                [(selectedDate)]="date"
+                                [isRequired]="true"
+                                [GregLabel]="'ميلادي'"
+                                [hijriLabel] ="'هجري'"
+                                [selectedDateType]="selectedDateType"
+                                [disabled]="isDisabled"
+                                [readonly]="isReadOnly"
+                                #datePicker>
     </hijri-gregorian-datepicker>
 
-    <button type="button" class="btn btn-sm btn-info" (click)="getDate()" [disabled]="form.invalid">Get Date</button>
+    <button type="button" class="btn btn-sm btn-dark mr-1" (click)="setCurrentGreg()" >Current Gregorian</button>
+    <button type="button" class="btn btn-sm btn-dark mr-1" (click)="setHijri()" >Current Hijri</button>
+
+    <button type="button" class="btn btn-sm btn-secondary mr-1" (click)="makeDisabled()" >Disabled</button>
+    <button type="button" class="btn btn-sm btn-primary  mr-1" (click)="makeReadonly()">ReadOnly</button>
+
+    <button type="button" class="btn btn-sm btn-info mr-2" (click)="getDate()" [disabled]="form.invalid">Get Date</button>
 
     <span class="font-weight-bold"> {{dateString}} </span>
 
