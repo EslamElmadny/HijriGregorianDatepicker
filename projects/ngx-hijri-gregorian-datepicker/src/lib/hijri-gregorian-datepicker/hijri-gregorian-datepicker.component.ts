@@ -58,6 +58,12 @@ export class HijriGregorianDatepickerComponent implements OnInit {
   close() {
     this.datePicker.close();
   }
+
+  clear() {
+    this.selectedDate = undefined;
+    this.close();
+    this.selectedDateChange.emit(null);
+  }
   getSelectedDate(): string {
 
     let formattedDate = this.dateFormatterService.ToString(this.selectedDate);

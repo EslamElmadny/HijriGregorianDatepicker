@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { NgbCalendar, NgbCalendarIslamicUmalqura, NgbDatepickerI18n, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { IslamicI18n } from '../IslamicI18n';
 import { ControlContainer, NgForm } from '@angular/forms';
@@ -16,6 +16,8 @@ import { ControlContainer, NgForm } from '@angular/forms';
   encapsulation: ViewEncapsulation.None
 })
 export class HijriDatepickerComponent {
+
+  @ViewChild('d') datePicker: any;
 
   @Input() selectedDate: NgbDateStruct;
   @Output() selectedDateChange: EventEmitter<NgbDateStruct> = new EventEmitter();
@@ -39,6 +41,12 @@ export class HijriDatepickerComponent {
     if (!this.selectedDate) {
       this.selectedDateChange.emit(null);
     }
+  }
+
+  clear() {
+    this.selectedDate = undefined;
+    this.datePicker.close();
+    this.selectedDateChange.emit(null);
   }
 
 }

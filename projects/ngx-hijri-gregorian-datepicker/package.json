@@ -1,6 +1,6 @@
 {
   "name": "ngx-hijri-gregorian-datepicker",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "author": "Eslam Adel",
   "keywords": ["DatePicker", "Hijri DatePicker" , "Gregorian DatePicker" , "higri", "datepicker" , "angular datepicker" , "Gregorian"],
   "repository": {
