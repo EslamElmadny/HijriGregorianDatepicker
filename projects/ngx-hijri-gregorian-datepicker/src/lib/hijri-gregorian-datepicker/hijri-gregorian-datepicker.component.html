@@ -1,11 +1,11 @@
 
     <div class="form-group" provideParentForm>
-      <label class="requiredInput" for="input-birth-Date">{{ label }} </label>
+      <label class="requiredInput" *ngIf="showLabel" for="input-birth-Date">{{ label }} </label>
 
       <div class="input-group">
 
-          <input  class="form-control"
-                  placeholder="d/M/yyyy"
+        <input  class="form-control"
+                  [placeholder]="placeHolder ? placeHolder : 'd/M/yyyy'"
                   [name]="label"
                   *ngIf="selectedDateType == DateType.Gregorian"
                   [(ngModel)]="selectedDate"
@@ -28,6 +28,7 @@
                              style="flex: 1 1 auto;"
                              [name]="label"
                              [isRequired]="isRequired"
+                             [placeHolder]="placeHolder"
                              [disabled]="disabled">
           </hijri-date-picker>
 

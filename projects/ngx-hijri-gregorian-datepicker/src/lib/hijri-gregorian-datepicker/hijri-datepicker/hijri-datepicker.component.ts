@@ -27,6 +27,7 @@ export class HijriDatepickerComponent {
   @Input() max: NgbDateStruct;
   @Input() name: string;
 
+  @Input() placeHolder: string;
 
   constructor() { }
 

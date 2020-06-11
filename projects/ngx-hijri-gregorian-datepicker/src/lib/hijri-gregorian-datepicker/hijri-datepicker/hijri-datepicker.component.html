@@ -2,7 +2,7 @@
 <input
     class="form-control hijriInput"
     [(ngModel)]="selectedDate"
-    placeholder="d/M/yyyy"
+    [placeholder]="placeHolder ?placeHolder : 'd/M/yyyy'"
     ngbDatepicker
     (click)="d.toggle()"
     (dateSelect)="changeDate()"

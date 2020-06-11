@@ -23,11 +23,7 @@ import { ProvideParentFormDirective } from './hijri-gregorian-datepicker/provide
     NgbModule
   ],
   providers: [
-    {
-      provide: NgbDateParserFormatter, useFactory() {
-        return new CustomNgbDateParserFormatter('d/M/yyyy');
-      }
-    },
+    {provide: NgbDateParserFormatter, useClass: CustomNgbDateParserFormatter},
     DateFormatterService
   ],
   exports: [ HijriGregorianDatepickerComponent, NgxHijriGregorianDatepickerComponent]

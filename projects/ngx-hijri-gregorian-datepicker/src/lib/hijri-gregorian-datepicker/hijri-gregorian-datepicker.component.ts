@@ -23,6 +23,9 @@ export class HijriGregorianDatepickerComponent implements OnInit {
   @Output() selectedDateChange: EventEmitter<NgbDateStruct> = new EventEmitter();
 
   @Input() label: string;
+  @Input() showLabel = true;
+
+
   @Input() readonly = false;
   @Input() isRequired = false;
   @Input() disabled = false;
@@ -35,6 +38,7 @@ export class HijriGregorianDatepickerComponent implements OnInit {
   @Input() hijriLabel: string;
   @Input() GregLabel: string;
 
+  @Input() placeHolder: string;
 
   get DateType() {
     return DateType;
