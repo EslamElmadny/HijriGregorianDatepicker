@@ -9,7 +9,7 @@
 * This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
 ## Examples/Demo
-A simple Example can be found under `src/app/app.component` directory of this repository. 
+Online demo can be found [here](https://eslamelmadny.github.io/HijriGregorianDatepicker/) 
 
 ## Development server
 
