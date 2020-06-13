@@ -10,7 +10,7 @@
 
 <div class="no-gutters">
 
-  <div class="col-5 offset-md-4 ">
+  <div class="col-10 col-lg-5 offset-1 offset-lg-4 ">
 
     <hijri-gregorian-datepicker [placeHolder]="'سنة/شهر/يوم'"
                                 [label]="'Date'"
@@ -24,15 +24,16 @@
                                 #datePicker>
     </hijri-gregorian-datepicker>
 
-    <button type="button" class="btn btn-sm btn-dark mr-1" (click)="setCurrentGreg()" >Current Gregorian</button>
-    <button type="button" class="btn btn-sm btn-dark mr-1" (click)="setHijri()" >Current Hijri</button>
+    <button type="button" class="btn btn-sm btn-dark mr-1 mt-3" (click)="setCurrentGreg()" >Current Gregorian</button>
+    <button type="button" class="btn btn-sm btn-dark mr-1 mt-3" (click)="setHijri()" >Current Hijri</button>
 
-    <button type="button" class="btn btn-sm btn-secondary mr-1" (click)="makeDisabled()" >Disabled</button>
-    <button type="button" class="btn btn-sm btn-primary  mr-1" (click)="makeReadonly()">ReadOnly</button>
+    <button type="button" class="btn btn-sm btn-secondary mr-1 mt-3" (click)="makeDisabled()" >Disabled</button>
+    <button type="button" class="btn btn-sm btn-primary  mr-1 mt-3" (click)="makeReadonly()">ReadOnly</button>
 
-    <button type="button" class="btn btn-sm btn-info mr-2" (click)="getDate()" [disabled]="form.invalid">Get Date</button>
+    <button type="button" class="btn btn-sm btn-info mr-2 mt-3" (click)="getDate()" [disabled]="form.invalid">Get Date</button>
 
-    <span class="font-weight-bold"> {{dateString}} </span>
+    <br />    <br />
+    <div class="font-weight-bold"> {{dateString}} </div>
 
     <hr/>
     <pre>Model: {{ date | json }}</pre>
