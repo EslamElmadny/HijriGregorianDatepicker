@@ -17,7 +17,7 @@ import { ControlContainer, NgForm } from '@angular/forms';
 })
 export class HijriDatepickerComponent {
 
-  @ViewChild('d') datePicker: any;
+  @ViewChild('d', { static: false }) datePicker: any;
 
   @Input() selectedDate: NgbDateStruct;
   @Output() selectedDateChange: EventEmitter<NgbDateStruct> = new EventEmitter();
