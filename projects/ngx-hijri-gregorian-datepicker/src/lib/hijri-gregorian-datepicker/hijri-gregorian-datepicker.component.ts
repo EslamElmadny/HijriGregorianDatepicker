@@ -18,7 +18,7 @@ const momentHijri = moment_;
 })
 export class HijriGregorianDatepickerComponent implements OnInit {
 
-  @ViewChild('d' , { static: false }) datePicker: any;
+  @ViewChild('d') datePicker: any;
 
 
   @Input() selectedDateType: DateType;

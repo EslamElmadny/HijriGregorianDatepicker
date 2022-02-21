@@ -23,7 +23,7 @@ export class AppComponent {
   isDisabled: boolean;
   isReadOnly: boolean;
 
-  @ViewChild('datePicker', { static: false }) startDatePicker: any;
+  @ViewChild('datePicker') startDatePicker: any;
 
 
   constructor(private dateFormatterService: DateFormatterService) {
