@@ -12,7 +12,7 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/core": "~9.1.13",
-    "@angular/common": "~9.1.13"
+    "@angular/common": "~12.2.16",
+    "@angular/core": "~12.2.16"
   }
 }
