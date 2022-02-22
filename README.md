@@ -6,6 +6,7 @@
 * Converting selected date back and forth when changing calendar type.
 * Provides service `DateFormatterService` to help converting date formats in both calendars types.
 * It is developed using  `Angular >=7.0.0`  and its newly introduced  `ng g library`  schematics.
+* Now It supports Angular v12.
 * This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
 ## Examples/Demo
